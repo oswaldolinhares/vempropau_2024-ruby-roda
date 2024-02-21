@@ -1,0 +1,36 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    bigdecimal (3.1.6)
+    nio4r (2.7.0)
+    pg (1.5.5)
+    puma (6.4.2)
+      nio4r (~> 2.0)
+    rack (3.0.9)
+    roda (3.77.0)
+      rack
+    sequel (5.77.0)
+      bigdecimal
+
+PLATFORMS
+  aarch64-linux
+  arm-linux
+  arm64-darwin
+  arm64-darwin-22
+  ruby
+  x86-linux
+  x86_64-darwin
+  x86_64-darwin-20
+  x86_64-linux
+
+DEPENDENCIES
+  pg (= 1.5.5)
+  puma (= 6.4.2)
+  roda (= 3.77.0)
+  sequel (= 5.77.0)
+
+RUBY VERSION
+   ruby 3.3.0p0
+
+BUNDLED WITH
+   2.5.3
