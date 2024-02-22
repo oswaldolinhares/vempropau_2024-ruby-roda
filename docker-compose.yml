@@ -33,6 +33,7 @@ services:
       DATABASE_URL: "postgres://paulao:segredosagrado@db:5432/vempropau"
       PORT: "9292"
       MAX_THREADS: "5"
+      EXECUTE_DB_SETUP: "true"
     deploy:
       resources:
         limits:
@@ -47,6 +48,9 @@ services:
       - "traefik.http.routers.web2.rule=Host(`localhost`)"
       - "traefik.http.services.web2.loadbalancer.server.port=9292"
       - "traefik.http.routers.web2.entrypoints=web"
+    environment:
+      RACK_ENV: "production"
+      EXECUTE_DB_SETUP: "false"
 
   db:
     image: "postgres:14"
