@@ -3,6 +3,7 @@ module AppPlugins
     app.plugin :default_headers, 'Content-Type' => 'application/json; charset=utf-8'
     app.plugin :all_verbs
     app.plugin :hash_routes
+    app.plugin :json_parser
     app.plugin :json
     
     app.plugin :not_found do
