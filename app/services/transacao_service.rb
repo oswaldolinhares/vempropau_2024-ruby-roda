@@ -31,11 +31,14 @@ class TransacaoService
   private
 
   def self.valid?(params)
-    valor = params['valor'].to_i
+    valor = params['valor']
     tipo = params['tipo']
     descricao = params['descricao']
 
-    valor.positive? && %w[c d].include?(tipo) && descricao.length.between?(1, 10)
+    valor_positivo_inteiro = valor.is_a?(Integer) && valor.positive?
+    valor_positivo_inteiro ||= valor.is_a?(String) && valor.match?(/\A\d+\z/) && valor.to_i.positive?
+  
+    valor_positivo_inteiro && %w[c d].include?(tipo) && descricao && descricao.length.between?(1, 10)
   end
 
   def self.calcular_novo_saldo(cliente, valor, tipo)
